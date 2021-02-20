@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #'posts.apps.PostsConfig'
+    'posts.apps.PostsConfig'
 ]
 
 MIDDLEWARE = [
@@ -55,7 +55,8 @@ ROOT_URLCONF = 'Lessons_3_Message_Board_App.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        #'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -65,8 +66,9 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
         },
-        'DIRS': os.path.join(BASE_DIR, 'templates')
+
     },
+
 ]
 
 WSGI_APPLICATION = 'Lessons_3_Message_Board_App.wsgi.application'
